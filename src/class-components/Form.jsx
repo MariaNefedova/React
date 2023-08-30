@@ -2,7 +2,7 @@ import React from "react";
 
 export class Form extends React.Component {
     state = {
-        name: 'Uwan'
+        name: 'Ewan'
     }
 
     handleClick = () => {
