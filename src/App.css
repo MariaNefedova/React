@@ -1,39 +1,41 @@
-.App {
-  text-align: center;
+.message {
+    border: 1px solid green;
+    margin: 0; 
+    width: 440px;   
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.author {
+   font-weight: bold; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form {
+    /*border: 1px solid blue;*/
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column wrap;     
+    margin: 20px;  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.inputMessage {
+    background: #fce9c0; /* Цвет фона */
+    border: 2px solid #a9c358; /* Параметры рамки */
+    padding: 5px; /* Поля */
+    width: 400px; /* Ширина */
+    height: 100px; /* Высота */
+    box-sizing: border-box; /* Алгоритм расчёта ширины */
+    font-size: 12px; /* Размер шрифта */    
 }
 
-.App-link {
-  color: #61dafb;
+.inputAuthor {
+    background: #fce9c0; /* Цвет фона */
+    border: 2px solid #a9c358; /* Параметры рамки */
+    padding: 5px; /* Поля */
+    width: 400px; /* Ширина */
+    box-sizing: border-box; /* Алгоритм расчёта ширины */
+    font-size: 12px; /* Размер шрифта */    
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buttonSend {
+    width: max-content;
+    margin: 10px;
 }
-
