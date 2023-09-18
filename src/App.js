@@ -1,38 +1,30 @@
-import logo from './logo.svg';
+import { useEffect, useState } from "react";
 import './App.css';
-import {Message} from './Message';
-import { Form } from './class-components/Form';
+import { Item } from './components/item'
+import { Messages } from "./components/messages";
+import { constants } from "./constants";
 
 function App() {
-  let name = 'Костя';
-  return (
-    // <div>
-    //   {/* <h1>Привет {name}</h1> */}
-    //   <Message name={name}/>
-    // </div>
+  const [messageList, setMessageList] = useState([]);                                                
 
-    <div>
-      <Message name={name}></Message>
-      <Form name={name}></Form>
-    </div>
+  const addMessage = (newMessage) => {
+      setMessageList((prevMessages) => ([...prevMessages, newMessage]));
+  }
 
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-  );
+  useEffect(() => {
+     if(messageList.length > 0 
+          && messageList[messageList.length-1].author !== constants.bot) {
+       const timeout = setTimeout(() => addMessage({
+          author: constants.bot, 
+          text: 'Im bot'}), 1500); 
+
+          return () => clearTimeout(timeout);
+     }
+  }, [messageList]);
+
+  return <>
+    <Messages messageList = {messageList}/>
+    <Item addMessage = {addMessage}/>
+  </> ;
 }
-
 export default App;
