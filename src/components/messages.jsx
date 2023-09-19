@@ -3,7 +3,7 @@ export const Messages = ({messageList}) => {
     {messageList.map((el, index)=> (
       <ul key={index} className="message">    
         <p className="author">{el.author}</p>
-        <p>{el.author}: {el.text}</p>
+        <p>{el.text}</p>
       </ul>
     ))}
     </> ;
